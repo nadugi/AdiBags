@@ -499,7 +499,7 @@ local function GetOptions()
 								desc = L['Save the current theme settings to the selected theme name.'],
 								type = 'execute',
 								order = 10,
-								confirm = function() return "Are you sure you want to save and overwrite the theme '"..addon.db.profile.theme.currentTheme.."'?" end,
+								confirm = function() return L["Are you sure you want to save and overwrite the theme '"]..addon.db.profile.theme.currentTheme.."'?" end,
 								disabled = function() return addon.db.profile.theme.currentTheme == 'default' end,
 								func = function() addon:SaveTheme() end,
 							},
@@ -508,7 +508,7 @@ local function GetOptions()
 								desc = L['Delete the selected theme from the database.'],
 								type = 'execute',
 								order = 20,
-								confirm = function() return "Are you sure you want to delete the theme '"..addon.db.profile.theme.currentTheme.."'?" end,
+								confirm = function() return L["Are you sure you want to delete the theme '"]..addon.db.profile.theme.currentTheme.."'?" end,
 								disabled = function() return addon.db.profile.theme.currentTheme == 'default' end,
 								func = function() addon:DeleteTheme() end,
 							},
@@ -530,7 +530,7 @@ local function GetOptions()
 					},
 					backpack = CreateBagOptions("Backpack", "backpack"),
 					bank = CreateBagOptions("Bank", "bank"),
-					reagentBank = CreateBagOptions("Reagent Bank", "reagentBank"),
+					reagentBank = CreateBagOptions(L["Reagent Bank"], "reagentBank"),
 				}
 			},
 			items = {
@@ -644,7 +644,7 @@ local function GetOptions()
 								end
 							},
 							notWhenTrading = {
-								name = L["At mechants', bank, auction house, ..."],
+								name = L["At mecrhants', bank, auction house, ..."],
 								desc = L["Change stacking at merchants', auction house, bank, mailboxes or when trading."],
 								order = 40,
 								width = 'double',
